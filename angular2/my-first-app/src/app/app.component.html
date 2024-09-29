@@ -1,0 +1,53 @@
+<button class="btn btn-success">try it</button>
+
+<div *ngIf="newdata2">
+  <ul>
+    <ng-container *ngFor="let node of newdata2.children">
+      <li (click)="toggleNode(node)">{{ node.name }}</li>
+      <ul *ngIf="node.expanded">
+        <ng-container *ngFor="let childNode of node.children">
+          <ng-container *ngIf="childNode.type === 'file'; else folderNode">
+            <li (click)="toggleNode(childNode)">{{ childNode.name }}</li>
+          </ng-container>
+          <ng-template #folderNode>
+            <li (click)="toggleNode(childNode)">{{ childNode.name }}</li>
+          </ng-template>
+        </ng-container>
+      </ul>
+    </ng-container>
+  </ul>
+</div>
+
+
+<div class="image-container" *ngIf="imagePaths && imagePaths.length > 0">
+  <div class="image-list">
+    <div *ngFor="let imgPath of imagePaths">
+
+      <img [src]="imgPath" alt="Image" class="opened-image" (click)="open(imgPath)" [class.enlarge]="selectedImagePath === imgPath">
+      <span *ngIf="selectedImagePath === imgPath" class="close-button" (click)="close()">X</span>
+    </div>
+  </div>
+</div>
+
+@if (newdata){
+<app-my-test (myEvent)="handleEvent($event)" [newdata]="newdata"></app-my-test>}
+@else {
+  <h2>nothing</h2>
+}
+
+<form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" formControlName="name">
+  <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched">
+    Name is required
+  </div>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" formControlName="email">
+  <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+    Email is required
+  </div>
+  
+  <button type="submit"(click)="submitForm" >Submit</button>
+</form>
+

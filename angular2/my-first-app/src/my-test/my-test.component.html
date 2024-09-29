@@ -1,0 +1,24 @@
+<p>my-test works!</p>
+
+<ng-container *ngTemplateOutlet="templateRef"></ng-container>
+
+<h1>{{ newdata +"!!!"}}</h1>
+
+<h2>after</h2>
+
+<button (click)="emitEvent()">
+    Send Data to Parent
+    </button>
+
+@for (item of newdata; track item) {
+    <h2>{{item}}</h2>
+  }
+
+
+
+<ng-template #templateRef>
+    <button class="mat-flat-button">Template</button>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="templateRef"></ng-container>
+

@@ -1,0 +1,78 @@
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  height: 100vh; /* Set the height of the tree to occupy the full height of the page */
+  width: 27%; /* Set the width of the tree to one-third of the page */
+  float: left; /* Float the tree to the left */
+  overflow-y: auto; /* Add vertical scroll if needed */
+}
+
+li {
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+li:hover {
+  background-color: #f0f0f0;
+}
+
+ul ul {
+  margin-left: 20px;
+}
+
+  
+  .image-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;  /* Align images in rows from left to right */
+    align-items: flex-start;  /* Align items vertically at the start */
+  }
+  
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.opened-image {
+  flex: 0 0 18%; /* Set the width to occupy 18% of the container width to fit 5 images in a row */
+  box-sizing: border-box;
+  padding: 1%; /* Add margin to create space between images */
+  height: auto; /* Maintain the aspect ratio of the images */
+  max-width: 18%; /* Ensure images do not exceed 18% of the container width */
+  max-height: 100%; /* Ensure images do not exceed the container height */
+}
+.enlarge {
+  width: 60vw; /* Adjust the width as needed for a wider display */
+  height: auto; /* Maintain the aspect ratio */
+  max-width: 100%; /* Ensure the image doesn't exceed the screen width */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 250px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  padding: 5px;
+  border-radius: 70%;
+  background-color: rgb(255, 0, 0);
+}
+
+.centered-message {
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: blanchedalmond;
+}

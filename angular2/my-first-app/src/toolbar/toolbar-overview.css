@@ -1,0 +1,50 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+.mat-toolbar span {
+    font-family: Arial, sans-serif; /* Change the font of the inscription */
+}
+
+.mat-toolbar span:nth-child(1) {
+    font-family: Arial, sans-serif; /* Change the font of the inscription */
+    font-size: 30px; /* Make the inscription bigger */
+    font-weight: bold; /* Make the inscription thicker */
+}
+
+.search-box {
+    height: 30px;
+    text-align: center; /* Center text in the input box */
+    font-style: italic; /* Make the font diagonal */
+}
+
+
+.mat-toolbar {
+    background-color: blue;
+    height: 70px; /* Make the background thicker */
+    color: white; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust spacing between items */
+}
+
+
+.search-button {
+    font-size: 18px; /* Increase the font size of the button text */
+    margin-right: 10px;
+    font-family: 'Times New Roman', serif; /* Change the font of the button */
+    border: 2px solid black; /* Increase border thickness */
+    padding: 10px 20px; /* Increase padding for a larger button size */
+    cursor: pointer;
+}
+
+
+.search-button:hover {
+    background-color: #788bdb; /* Lighter background color when hovered */
+}
+
+.mat-toolbar label {
+    font-size: 20px; /* Make the font size bigger */
+    font-family: 'Verdana', sans-serif; /* Change to a different font family */
+  }
